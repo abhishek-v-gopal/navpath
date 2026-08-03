@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getDistrict, DISTRICT_URL_SLUGS } from "@/lib/districts";
+import { getDistrict, DISTRICT_URL_SLUGS, tokenize, DISTRICT_FAQ_TEMPLATE } from "@/lib/districts";
 import Header from "./_sections/Header";
 import Hero from "./_sections/Hero";
 import BadgeStrip from "./_sections/BadgeStrip";
@@ -21,6 +21,8 @@ import LifeAtNavPath from "./_sections/LifeAtNavPath";
 import FinalCta from "./_sections/FinalCta";
 import Footer from "./_sections/Footer";
 import FloatingActions from "./_sections/FloatingActions";
+
+const SITE_URL = "https://www.navpathacademy.com";
 
 export const dynamicParams = false;
 
@@ -44,8 +46,54 @@ export default async function Page({ params }) {
   const district = getDistrict(slug);
   if (!district) notFound();
 
+  const faqs = tokenize(DISTRICT_FAQ_TEMPLATE, district);
+  const canonical = `${SITE_URL}/${district.slug}`;
+  const districtJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: `IMU CET Coaching in ${district.name}`,
+          item: canonical,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "NavPath Academy",
+      url: SITE_URL,
+      telephone: "+917736522210",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kottayam",
+        addressRegion: "Kerala",
+        addressCountry: "IN",
+      },
+      areaServed: district.name,
+    },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(districtJsonLd) }}
+      />
       <Header />
       <main>
         <Hero district={district} />

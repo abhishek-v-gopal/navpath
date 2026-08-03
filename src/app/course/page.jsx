@@ -246,6 +246,13 @@ const SPONSORSHIP_MATERIALS = [
 
 /* --------------------------------- page ----------------------------------- */
 
+export const metadata = {
+  title: "IMU CET Courses & DNS Sponsorship Coaching | NavPath Academy",
+  description:
+    "Merchant Navy preparation courses at NavPath Academy: IMU CET, DNS sponsorship, B.Sc Nautical Science and Marine Engineering coaching, offline in Kottayam, Kerala and online across India.",
+  alternates: { canonical: "/course" },
+};
+
 export default function CoursesPage() {
   return (
     <div className="flex min-h-screen flex-col">

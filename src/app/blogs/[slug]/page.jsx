@@ -36,7 +36,7 @@ function buildJsonLd(post) {
         name: "NavPath Academy",
         logo: {
           "@type": "ImageObject",
-          url: `${SITE_URL}/android-chrome-512x512.png`,
+          url: `${SITE_URL}/assets/navpath-logo-new-C8Mlrq7N.webp`,
           width: 512,
           height: 512,
         },

@@ -136,6 +136,13 @@ const DIRECTOR_BIO = [
 
 /* --------------------------------- page ----------------------------------- */
 
+export const metadata = {
+  title: "About NavPath Academy | Captain-Led IMU CET Coaching in Kerala",
+  description:
+    "NavPath Academy is a Merchant Navy officer coaching institute in Kottayam, Kerala, run by Captains and serving officers. 30+ years of sailing experience mentors students for IMU CET, DNS sponsorship and Marine Engineering careers.",
+  alternates: { canonical: "/about" },
+};
+
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">

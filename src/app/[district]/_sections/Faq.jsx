@@ -2,72 +2,10 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { tokenize } from "@/lib/districts";
-
-const FAQS_TEMPLATE = [
-  {
-    question: "Does NavPath Academy provide IMU CET Coaching in {city}?",
-    answer:
-      "Yes. NavPath Academy provides IMU CET Coaching in {city} through structured IMU CET preparation, mock-test review, sponsorship awareness, interview support, and parent counselling. Students from {city} can choose the most practical mix of online guidance and Kottayam campus access.",
-  },
-  {
-    question: "Is IMU CET Coaching in {city} available online?",
-    answer:
-      "Yes. Online guidance is available for students who cannot travel regularly. The focus stays on live structure, doubt clearing, timed mocks, review, and counselling rather than passive recorded learning.",
-  },
-  {
-    question: "What subjects are covered for IMU CET?",
-    answer:
-      "The preparation covers Physics, Chemistry, Mathematics, English, aptitude, and general awareness, with revision planning and timed mock tests to improve accuracy and speed.",
-  },
-  {
-    question: "Does NavPath include DNS sponsorship coaching for {city} students?",
-    answer:
-      "Yes. Students receive sponsorship awareness, aptitude and English guidance, grooming inputs, interview preparation, and realistic counselling about what depends on company criteria.",
-  },
-  {
-    question: "How can students travel from {city} to NavPath's Kottayam campus?",
-    answer: "{travel}",
-  },
-  {
-    question: "Is the programme suitable for Plus Two students?",
-    answer:
-      "Yes. Plus Two students can join after an eligibility and profile discussion. The plan is especially useful when students need to balance board exams, entrance preparation, and family decisions.",
-  },
-  {
-    question: "Does NavPath guarantee IMU CET rank or company sponsorship?",
-    answer:
-      "No responsible coaching centre should guarantee rank or sponsorship. NavPath focuses on preparation quality, mock review, communication, interview readiness, and honest guidance.",
-  },
-  {
-    question: "How are mock tests reviewed?",
-    answer:
-      "Mocks are reviewed for weak chapters, careless mistakes, time pressure, accuracy, and revision priorities. The score is used to decide the next preparation step.",
-  },
-  {
-    question: "Can parents speak with NavPath before admission?",
-    answer:
-      "Yes. Parent counselling is available so families can ask about eligibility, fees, route options, safety, medical expectations, sponsorship, and life at sea.",
-  },
-  {
-    question: "What makes NavPath different from a generic coaching centre in {city}?",
-    answer:
-      "NavPath combines IMU CET teaching with captain-led maritime mentoring, sponsorship awareness, interview preparation, small-batch attention, and parent-friendly counselling.",
-  },
-  {
-    question: "Does the programme cover IMU CET syllabus and exam pattern?",
-    answer:
-      "Yes. The syllabus and exam pattern are explained through subject modules, practice targets, mock tests, and review conversations so students know how to prepare.",
-  },
-  {
-    question: "How do I start IMU CET Coaching in {city}?",
-    answer:
-      "Submit an enquiry from this page with the student's current class, location, academic background, and Merchant Navy goal. NavPath will guide the next step based on the student's profile.",
-  },
-];
+import { tokenize, DISTRICT_FAQ_TEMPLATE } from "@/lib/districts";
 
 export default function Faq({ district }) {
-  const FAQS = tokenize(FAQS_TEMPLATE, district);
+  const FAQS = tokenize(DISTRICT_FAQ_TEMPLATE, district);
   const heading = tokenize("FAQs about IMU CET Coaching in {city}.", district);
   const [open, setOpen] = useState(() => new Set([0]));
 

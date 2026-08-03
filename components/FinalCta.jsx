@@ -39,7 +39,7 @@ export default function FinalCta() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
-            <AnchorIcon className="text-amber-300" />
+            <AnchorIcon className="text-amber-300 h-5 w-5" />
             Start Your Maritime Journey
           </span>
 
