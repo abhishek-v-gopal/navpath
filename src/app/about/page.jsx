@@ -429,7 +429,7 @@ export default function AboutPage() {
 
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/917736522210?text=Hi!%20I'd%20like%20to%20know%20more%20about%20IMU%20CET%20coaching%20at%20NavPath%20Academy.%20Can%20you%20help%20me%3F"
+        href="https://wa.me/919400587885?text=Hi!%20I'd%20like%20to%20know%20more%20about%20IMU%20CET%20coaching%20at%20NavPath%20Academy.%20Can%20you%20help%20me%3F"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"

@@ -325,7 +325,7 @@ export default function ContactForm() {
               Call +91 7736522210
             </a>
             <a
-              href="https://wa.me/917736522210?text=Hi%20NavPath%20Academy%2C%20I%20could%20not%20complete%20the%20website%20enquiry%20form.%20Please%20help%20me%20with%20admission%20guidance."
+              href="https://wa.me/919400587885?text=Hi%20NavPath%20Academy%2C%20I%20could%20not%20complete%20the%20website%20enquiry%20form.%20Please%20help%20me%20with%20admission%20guidance."
               target="_blank"
               rel="noopener noreferrer"
               data-analytics-label="Enquiry fallback WhatsApp"

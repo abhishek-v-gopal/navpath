@@ -10,7 +10,7 @@ export default function StaticContactDock() {
           <div class="noscript-contact-notice" role="status">
             Website enquiry unavailable? Contact admissions directly:
             <a href="tel:+917736522210">Call +91 7736522210</a>
-            <a href="https://wa.me/917736522210?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance." target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+            <a href="https://wa.me/919400587885?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance." target="_blank" rel="noopener noreferrer">WhatsApp us</a>
           </div>`,
         }}
       />
@@ -26,7 +26,7 @@ export default function StaticContactDock() {
         </a>
         <a
           className="static-contact-dock__link static-contact-dock__link--whatsapp"
-          href="https://wa.me/917736522210?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance."
+          href="https://wa.me/919400587885?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance."
           target="_blank"
           rel="noopener noreferrer"
           data-analytics-label="Static mobile WhatsApp"

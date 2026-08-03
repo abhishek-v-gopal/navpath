@@ -15,7 +15,7 @@ import { WhatsAppIcon } from "./icons";
 
 const CALL_LINK = "tel:+917736522210";
 const WHATSAPP_LINK =
-  "https://wa.me/917736522210?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance.";
+  "https://wa.me/919400587885?text=Hi%20NavPath%20Academy%2C%20I%20need%20admission%20guidance.";
 
 const INPUT_CLASS =
   "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
