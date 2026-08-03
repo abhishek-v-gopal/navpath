@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../../components/navbar";
 import Footer from "../../../components/Footer";
+import EnquiryTrigger from "@/components/EnquiryTrigger";
 
 /* ---------- local icons (exact lucide paths, no extra deps) ---------- */
 
@@ -590,13 +591,14 @@ export default function CoursesPage() {
                 Merchant Navy.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <button
-                  type="button"
+                <EnquiryTrigger
+                  title="Book Free Consultation"
+                  subtitle="Share your details and the team will reach out to plan your Maritime career path."
                   className="inline-flex h-14 items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-teal-500 px-10 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-teal-400"
                 >
                   Book Free Consultation
                   <ArrowRightIcon />
-                </button>
+                </EnquiryTrigger>
                 <Link
                   href="/about"
                   className="inline-flex h-14 items-center justify-center gap-2 whitespace-nowrap rounded-2xl border-2 border-white/30 bg-white/10 px-10 text-lg font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-lg"

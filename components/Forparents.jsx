@@ -1,3 +1,5 @@
+import EnquiryTrigger from "@/components/EnquiryTrigger";
+
 /* ---------- local icons (exact lucide paths, no extra deps) ---------- */
 
 function HeartIcon({ className = "w-4 h-4" }) {
@@ -207,13 +209,14 @@ export default function ForParents() {
             We&rsquo;ll walk you through course options, sponsorship pathways, expected costs,
             timelines and realistic growth in the Merchant Navy.
           </p>
-          <button
-            type="button"
+          <EnquiryTrigger
+            title="Book Parent Counselling Session"
+            subtitle="Meet us, ask questions, then decide. We'll walk you through course options and sponsorship pathways."
             className="inline-flex h-auto min-h-12 items-center justify-center gap-2 rounded-xl bg-[#6c65e6] px-5 py-3 text-center text-base font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90"
           >
             Book Parent Counselling Session
             <MessageCircleIcon className="h-4 w-4" />
-          </button>
+          </EnquiryTrigger>
         </div>
       </div>
     </section>

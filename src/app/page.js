@@ -32,6 +32,7 @@ import HowItWorks from "../../components/Howitworks";
 import IMUCETGuidance from "../../components/Imucetguidance";
 import FinalCta from "../../components/FinalCta";
 import Footer from "../../components/Footer";
+import EnquiryTrigger from "../../src/components/EnquiryTrigger";
 
 const TRUST_BADGES = [
   { label: "Captain-led" },
@@ -335,20 +336,22 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
-            <Link
-              href="/mentorship-call"
+            <EnquiryTrigger
+              title="Book Mentorship Call"
+              subtitle="Share your profile and the team will get back with a mentoring slot."
               className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-900/40 transition hover:from-indigo-400 hover:to-violet-400 sm:text-base"
             >
               Book Mentorship Call
               <ChatIcon className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/consultation"
+            </EnquiryTrigger>
+            <EnquiryTrigger
+              title="Book Free Consultation"
+              subtitle="Tell us where you are in your decision and get free career guidance."
               className="flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
             >
               Book Free Consultation
               <ArrowRightIcon className="h-4 w-4" />
-            </Link>
+            </EnquiryTrigger>
             <Link
               href="/syllabus.pdf"
               className="flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"

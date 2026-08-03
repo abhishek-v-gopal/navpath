@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import EnquiryTrigger from "@/components/EnquiryTrigger";
 
 /* ---------- local icons (exact lucide paths, no extra deps) ---------- */
 
@@ -290,7 +291,7 @@ const CHAPTERS = [
     id: "imu-cet-guide-chapter-1",
     badge: "Route clarity",
     title: "A focused route into IMU CET and Merchant Navy preparation",
-    img: "/assets/guide-route-award.webp",
+    img: "/assets/home-guide-route-award.webp",
     imgAlt:
       "NavPath Academy IMU CET coaching award handover and maritime career route guidance",
     caption:
@@ -307,7 +308,7 @@ const CHAPTERS = [
     id: "imu-cet-guide-chapter-2",
     badge: "Preparation method",
     title: "What serious IMU CET coaching should include",
-    img: "/assets/guide-student-moment.webp",
+    img: "/assets/home-guide-student-moment.webp",
     imgAlt:
       "NavPath Academy students celebrating IMU CET coaching and Merchant Navy preparation milestones",
     caption:
@@ -324,7 +325,7 @@ const CHAPTERS = [
     id: "imu-cet-guide-chapter-3",
     badge: "Sponsorship guidance",
     title: "DNS sponsorship and interview readiness",
-    img: "/assets/guide-sponsorship-award.webp",
+    img: "/assets/home-guide-sponsorship-award.webp",
     imgAlt:
       "NavPath Academy DNS sponsorship guidance and IMU CET student achievement support",
     caption:
@@ -341,7 +342,7 @@ const CHAPTERS = [
     id: "imu-cet-guide-chapter-4",
     badge: "Decision checklist",
     title: "How to compare IMU CET classes before joining",
-    img: "/assets/guide-mentor-review.webp",
+    img: "/assets/home-guide-mentor-review.webp",
     imgAlt:
       "NavPath Academy mentor reviewing IMU CET coaching options with Merchant Navy aspirants",
     caption:
@@ -359,7 +360,7 @@ const CHAPTERS = [
     badge: "Kerala access",
     title:
       "How Kerala families can choose between campus, online and blended support",
-    img: "/assets/guide-kerala-students.webp",
+    img: "/assets/home-guide-kerala-students.webp",
     imgAlt:
       "Kerala students with NavPath Academy for IMU CET coaching and Merchant Navy guidance",
     caption:
@@ -376,7 +377,7 @@ const CHAPTERS = [
     id: "imu-cet-guide-chapter-6",
     badge: "Parent clarity",
     title: "Transparent expectations before admission",
-    img: "/assets/guide-parent-clarity.webp",
+    img: "/assets/home-guide-parent-clarity.webp",
     imgAlt:
       "NavPath Academy parent counselling for IMU CET coaching in Kerala and India",
     caption:
@@ -936,7 +937,7 @@ export default function IMUCETGuidance() {
           </div>
           <figure className="relative min-w-0 overflow-hidden rounded-lg border border-[#e5e2f5] bg-white shadow-sm">
             <Image
-              src="/assets/guide-event-counselling.webp"
+              src="/assets/home-guide-event-counselling.webp"
               alt="NavPath Academy IMU CET coaching event counselling for Kerala and India Merchant Navy aspirants"
               width={1280}
               height={853}
@@ -1336,13 +1337,14 @@ export default function IMUCETGuidance() {
               </p>
             </div>
             <div className="flex min-w-0 flex-col gap-3 sm:flex-row lg:flex-col">
-              <button
-                type="button"
+              <EnquiryTrigger
+                title="Book Mentorship Call"
+                subtitle="Share class, stream, marks pattern, location and Merchant Navy interest. NavPath can guide the next step without forcing every student into the same batch."
                 className="flex h-auto min-h-12 w-full items-center justify-center gap-2 whitespace-normal rounded-xl bg-amber-400 px-5 py-3 text-center text-base font-bold text-[#241f3d] transition-all duration-300 hover:bg-amber-300 sm:w-auto lg:w-full"
               >
                 Book Mentorship Call
                 <ArrowRightIcon />
-              </button>
+              </EnquiryTrigger>
               <Link
                 href="/best-imu-cet-coaching-india"
                 className="flex h-auto min-h-12 w-full items-center justify-center gap-2 whitespace-normal rounded-xl border-2 border-white/35 bg-white/10 px-5 py-3 text-center text-base font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/15 sm:w-auto lg:w-full"

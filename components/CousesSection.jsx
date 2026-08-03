@@ -141,7 +141,7 @@ export default function CoursesSection() {
 
         <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href="/courses"
+            href="/course"
             className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-teal-600 px-8 text-base font-semibold text-white transition-all duration-300 hover:bg-teal-700 hover:shadow-lg hover:shadow-teal-500/30"
           >
             Explore Course Details

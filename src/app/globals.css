@@ -1,26 +1,251 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(252 26% 97%);
+  --foreground: hsl(256 27% 32%);
+  --primary: hsl(256 27% 32%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(243 72% 65%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --accent: hsl(183 56% 54%);
+  --accent-foreground: hsl(256 27% 20%);
+  --highlight: hsl(63 81% 80%);
+  --highlight-foreground: hsl(256 27% 32%);
+  --muted: hsl(252 26% 94%);
+  --muted-foreground: hsl(256 15% 50%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(256 27% 32%);
+  --border: hsl(256 20% 88%);
+  --input: hsl(256 20% 88%);
+  --ring: hsl(243 72% 65%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --radius: 1rem;
+  --font-display-stack: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(256, 27%, 32%) 0%,
+    hsl(243, 72%, 65%) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    hsl(243, 72%, 65%) 0%,
+    hsl(183, 56%, 54%) 100%
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    hsl(183, 56%, 54%) 0%,
+    hsl(63, 81%, 80%) 100%
+  );
+  --gradient-hero: linear-gradient(
+    180deg,
+    hsl(256, 27%, 32%) 0%,
+    hsl(243, 72%, 55%) 50%,
+    hsl(183, 56%, 54%) 100%
+  );
+  --shadow-sm: 0 2px 8px -2px hsl(256 27% 32% / 0.08);
+  --shadow-md: 0 8px 24px -8px hsl(256 27% 32% / 0.12);
+  --shadow-lg: 0 16px 48px -12px hsl(256 27% 32% / 0.18);
+  --shadow-glow: 0 0 40px hsl(243 72% 65% / 0.3);
+  --shadow-glow-teal: 0 0 40px hsl(183 56% 54% / 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --font-sans: var(--font-jakarta-sans, "Plus Jakarta Sans", system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular, monospace);
+  --font-display: var(--font-space-grotesk, var(--font-display-stack));
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+  --shadow-glow-teal: var(--shadow-glow-teal);
+  --background-image-gradient-primary: var(--gradient-primary);
+  --background-image-gradient-secondary: var(--gradient-secondary);
+  --background-image-gradient-accent: var(--gradient-accent);
+  --background-image-gradient-hero: var(--gradient-hero);
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes accordion-down {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    0% {
+      height: var(--radix-accordion-content-height);
+    }
+    100% {
+      height: 0;
+    }
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta-sans, "Plus Jakarta Sans", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ---------- static contact safety net (matches production head styles) ---------- */
+
+.static-contact-dock {
+  display: none;
+}
+
+.noscript-contact-notice {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 16px;
+  background: #4b3b6a;
+  color: #ffffff;
+  font: 500 14px/1.5 "Plus Jakarta Sans", system-ui, sans-serif;
+  text-align: center;
+}
+
+.noscript-contact-notice a {
+  display: inline-block;
+  margin-left: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  html:not(.static-contact-disabled) {
+    scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  html:not(.static-contact-disabled) body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .static-contact-dock {
+    position: fixed;
+    right: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 12px;
+    z-index: 49;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+    pointer-events: none;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  .static-contact-dock__link {
+    box-sizing: border-box;
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(24, 19, 35, 0.24);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .static-contact-dock__link:focus-visible {
+    outline: 3px solid #e8ed91;
+    outline-offset: 2px;
+  }
+
+  .static-contact-dock__link--call {
+    background: #4b3b6a;
+  }
+
+  .static-contact-dock__link--whatsapp {
+    background: #168b45;
+  }
+
+  .static-contact-dock__icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+  }
+
+  .static-contact-disabled .static-contact-dock {
+    display: none !important;
+  }
+}
+
+@media print {
+  body {
+    padding-bottom: 0 !important;
+  }
+
+  .static-contact-dock,
+  .noscript-contact-notice {
+    display: none !important;
+  }
 }

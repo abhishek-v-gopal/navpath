@@ -1,3 +1,5 @@
+import EnquiryTrigger from "@/components/EnquiryTrigger";
+
 /* ---------- local icons (exact lucide paths, no extra deps) ---------- */
 
 function ClipboardCheckIcon({ className = "h-6 w-6" }) {
@@ -121,13 +123,14 @@ export default function AdmissionEnquiry() {
               </div>
             </div>
 
-            <button
-              type="button"
+            <EnquiryTrigger
+              title="Send an Enquiry"
+              subtitle="Tell us what you are preparing for and where you are in the decision process. A clear enquiry helps the team respond with relevant guidance instead of a generic answer."
               className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#7972e7] px-8 text-base font-semibold text-white transition-all duration-300 hover:bg-[#6a63d9] hover:shadow-lg hover:shadow-[#7972e7]/30"
             >
               Send Enquiry
               <ArrowRightIcon />
-            </button>
+            </EnquiryTrigger>
           </div>
         </div>
       </div>
