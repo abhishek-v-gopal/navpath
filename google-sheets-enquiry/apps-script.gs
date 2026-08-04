@@ -25,7 +25,7 @@
 // auto-created one, paste its ID below (the long string in the sheet URL
 // between /d/ and /edit). Otherwise leave it empty.
 
-var EXISTING_SPREADSHEET_ID = "";
+var EXISTING_SPREADSHEET_ID = "1-ZjBTBPbHSg7r5534rab5s-ngcVuZOuywA38PfHcw1g";
 
 var SHEET_NAME = "Enquiries";
 var PROP_KEY = "NAVPATH_SHEET_ID";
@@ -88,7 +88,10 @@ function doPost(e) {
     p.enquiry_type || "",
     p.source_page || "",
   ]);
-  return ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
+  return ContentService.createTextOutput(
+    "OK\nspreadsheet=" + ss.getId() + "\nurl=" + ss.getUrl() + "\nsheet=" +
+      sheet.getSheetName() + "\nrow=" + sheet.getLastRow() + "\ntime=" + new Date()
+  ).setMimeType(ContentService.MimeType.TEXT);
 }
 
 function doGet() {

@@ -75,6 +75,7 @@ async function sendEnquiry(payload) {
   if (SHEET_URL) {
     const res = await fetch(SHEET_URL, { method: "POST", mode: "cors", body });
     const text = await res.text();
+    console.log("[enquiry] sent via google-sheets, response:", text);
     if (!res.ok || !text.includes("OK")) {
       throw new Error("Sheet submit failed");
     }
@@ -86,6 +87,7 @@ async function sendEnquiry(payload) {
     body: JSON.stringify({ ...payload, apiKey: STATICFORMS_KEY, replyTo: payload.email }),
   });
   const result = await res.json();
+  console.log("[enquiry] sent via staticforms, response:", result);
   if (!result.success) {
     throw new Error("Enquiry submit failed");
   }
